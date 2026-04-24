@@ -15,6 +15,20 @@
 </head>
 <body>
     <div class="bg-watermark"></div>
+
+    <!-- Token Maestro Overlay -->
+    <div id="masterTokenOverlay" class="master-token-overlay">
+        <div class="token-card">
+            <img src="assets/logo.png" alt="Logo HSDA" class="token-logo">
+            <h2>Acceso Restringido</h2>
+            <p>Por favor, ingresa la clave maestra para autorizar este dispositivo.</p>
+            <div class="input-group">
+                <input type="password" id="masterTokenInput" placeholder="Clave Maestra" autofocus>
+            </div>
+            <button id="authorizeBtn" class="btn-primary">Autorizar Dispositivo</button>
+            <p id="tokenError" class="token-error hidden">Clave incorrecta. Inténtalo de nuevo.</p>
+        </div>
+    </div>
     <header class="header">
         <img src="assets/logo.png" alt="Logo HSDA" class="logo">
         <h1>Entrevista de Salida</h1>

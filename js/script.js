@@ -6,6 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submitBtn');
     const statusMessage = document.getElementById('statusMessage');
     const successMessage = document.getElementById('successMessage');
+
+    // Elementos del Token Maestro
+    const masterTokenOverlay = document.getElementById('masterTokenOverlay');
+    const masterTokenInput = document.getElementById('masterTokenInput');
+    const authorizeBtn = document.getElementById('authorizeBtn');
+    const tokenError = document.getElementById('tokenError');
+    const MASTER_KEY = '0112358132172';
+
+    // Verificar autorización previa
+    const isAuthorized = localStorage.getItem('hsda_authorized');
+    if (isAuthorized === 'true') {
+        masterTokenOverlay.classList.add('hidden');
+    }
+
+    // Lógica de Autorización
+    authorizeBtn.addEventListener('click', () => {
+        if (masterTokenInput.value === MASTER_KEY) {
+            localStorage.setItem('hsda_authorized', 'true');
+            masterTokenOverlay.classList.add('hidden');
+        } else {
+            tokenError.classList.remove('hidden');
+            masterTokenInput.value = '';
+            masterTokenInput.focus();
+        }
+    });
+
+    // Permitir Enter para autorizar
+    masterTokenInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') authorizeBtn.click();
+    });
+
     
     // Configuración del Signature Pad
     const ctx = canvas.getContext('2d');
