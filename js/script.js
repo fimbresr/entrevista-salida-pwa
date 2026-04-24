@@ -123,6 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
         firmaInput.value = '';
     });
 
+    // Sanitización XSS: elimina caracteres HTML peligrosos antes de enviar
+    function sanitizeInput(str) {
+        if (typeof str !== 'string') return str;
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+            .trim();
+    }
+
     // Envío del Formulario
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -134,8 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(form);
         const data = {};
+        // Sanitizar todos los campos del formulario antes de enviar
         formData.forEach((value, key) => {
-            data[key] = value;
+            data[key] = sanitizeInput(value);
         });
 
         // Mostrar estado de carga
