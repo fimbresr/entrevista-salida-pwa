@@ -12,7 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const masterTokenInput = document.getElementById('masterTokenInput');
     const authorizeBtn = document.getElementById('authorizeBtn');
     const tokenError = document.getElementById('tokenError');
-    const MASTER_KEY = '0112358132172';
+
+    // Hash SHA-256 de la clave maestra (nunca se almacena la clave en texto plano)
+    const MASTER_KEY_HASH = 'ab478f46d3de6c6b4c1fd556b7c8f5eb5bc7b7025d38358fa396d5fccb5b2415';
+
+    // Función para generar SHA-256 usando la Web Crypto API nativa del navegador
+    async function sha256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
 
     // Verificar autorización previa
     const isAuthorized = localStorage.getItem('hsda_authorized');
@@ -20,9 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
         masterTokenOverlay.classList.add('hidden');
     }
 
-    // Lógica de Autorización
-    authorizeBtn.addEventListener('click', () => {
-        if (masterTokenInput.value === MASTER_KEY) {
+    // Lógica de Autorización con hash seguro
+    async function validateToken() {
+        const inputHash = await sha256(masterTokenInput.value);
+        if (inputHash === MASTER_KEY_HASH) {
             localStorage.setItem('hsda_authorized', 'true');
             masterTokenOverlay.classList.add('hidden');
         } else {
@@ -30,11 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
             masterTokenInput.value = '';
             masterTokenInput.focus();
         }
-    });
+    }
+
+    authorizeBtn.addEventListener('click', validateToken);
 
     // Permitir Enter para autorizar
     masterTokenInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') authorizeBtn.click();
+        if (e.key === 'Enter') validateToken();
     });
 
     
