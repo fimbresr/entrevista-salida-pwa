@@ -1,0 +1,17 @@
+{
+  "name": "Entrevista de Salida HSDA",
+  "short_name": "Entrevista HSDA",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#004a99",
+  "description": "Cuestionario de entrevista de salida para Recursos Humanos del Hospital San Diego de Alcalá.",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

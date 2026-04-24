@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Entrevista de Salida - HSDA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0c10">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-watermark"></div>
+    <header class="header">
+        <img src="assets/logo.png" alt="Logo HSDA" class="logo">
+        <h1>Entrevista de Salida</h1>
+    </header>
+
+    <main class="container">
+        <div class="intro-card">
+            <p>Gracias por tu tiempo con nosotros. Esta entrevista de salida es una oportunidad para compartir tus experiencias y sugerencias, las cuales nos ayudarán a mejorar. Tu opinión es valiosa. ¡Agradecemos tu retroalimentación!</p>
+        </div>
+
+        <form id="exitInterviewForm">
+            <section class="form-section">
+                <h2>Información General</h2>
+                <div class="input-group">
+                    <label for="nombre_completo">Nombre completo *</label>
+                    <input type="text" id="nombre_completo" name="Nombre Completo" required>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="no_empleado">No. de empleado *</label>
+                        <input type="text" id="no_empleado" name="No. de Empleado" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="puesto">Puesto *</label>
+                        <input type="text" id="puesto" name="Puesto" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="departamento">Departamento *</label>
+                    <select id="departamento" name="Departamento" required>
+                        <option value="" disabled selected>Selecciona un departamento</option>
+                        <option value="Admon. y caja">Admon. y caja</option>
+                        <option value="Almacén">Almacén</option>
+                        <option value="Comercialización">Comercialización</option>
+                        <option value="Dirección General">Dirección General</option>
+                        <option value="Dirección de operaciones">Dirección de operaciones</option>
+                        <option value="Enfermería">Enfermería</option>
+                        <option value="Farmacia">Farmacia</option>
+                        <option value="Finanzas">Finanzas</option>
+                        <option value="Limpieza">Limpieza</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                        <option value="Nutrición">Nutrición</option>
+                        <option value="Recursos Humanos">Recursos Humanos</option>
+                    </select>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="jefe_inmediato">Jefe(a) inmediato</label>
+                        <input type="text" id="jefe_inmediato" name="Jefe Inmediato">
+                    </div>
+                    <div class="input-group">
+                        <label for="fecha_baja">Fecha baja *</label>
+                        <input type="date" id="fecha_baja" name="Fecha Baja" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Motivo de la Salida</h2>
+                <div class="input-group">
+                    <label>¿Cuál es la principal razón de tu renuncia? *</label>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="¿Cual es la principal razon de tu renuncia?" value="Mejor oferta de trabajo" required> Mejor oferta de trabajo</label>
+                        <label class="radio-label"><input type="radio" name="¿Cual es la principal razon de tu renuncia?" value="Relación con tu jefe inmediato"> Relación con tu jefe inmediato</label>
+                        <label class="radio-label"><input type="radio" name="¿Cual es la principal razon de tu renuncia?" value="Ambiente laboral"> Ambiente laboral</label>
+                        <label class="radio-label"><input type="radio" name="¿Cual es la principal razon de tu renuncia?" value="Horario laboral"> Horario laboral</label>
+                        <label class="radio-label"><input type="radio" name="¿Cual es la principal razon de tu renuncia?" value="El trabajo no fue lo que esperaba"> El trabajo no fue lo que esperaba</label>
+                        <label class="radio-label"><input type="radio" name="¿Cual es la principal razon de tu renuncia?" value="Otros"> Otros (especificar abajo)</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="otros">Otros</label>
+                    <input type="text" id="otros" name="Otros">
+                </div>
+                <div class="input-group">
+                    <label for="detonante">¿Algo detonó tu desicion de dejar la empresa? *</label>
+                    <textarea id="detonante" name="¿Algo detonó tu desicion de dejar la empresa?" rows="3" required></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Experiencia Laboral</h2>
+                <div class="input-group">
+                    <label for="satisfactorio">¿Qué fué lo mas satisfactorio de tu trabajo? *</label>
+                    <textarea id="satisfactorio" name="¿Qué fué lo mas satisfactorio de tu trabajo?" rows="3" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="no_satisfactorio">¿Qué fué lo menos satisfactorio de tu trabajo? *</label>
+                    <textarea id="no_satisfactorio" name="¿Qué fué lo menos satisfactorio de tu trabajo?" rows="3" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="cultura">¿Comó describirias la cultura organizacional y el ambiente laboral de tu área? *</label>
+                    <textarea id="cultura" name="¿Comó describirias la cultura organizacional y el ambiente laboral de tu área?" rows="3" required></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Evaluación y Capacitación</h2>
+                <div class="input-group">
+                    <label>¿Recibiste el suficiante entrenamiento y capacitación para realizar tu trabajo de manera efectiva? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿Recibiste el suficiante entrenamiento y capacitación para realizar tu trabajo de manera efectiva?" value="Sí" required> Sí</label>
+                        <label class="radio-label"><input type="radio" name="¿Recibiste el suficiante entrenamiento y capacitación para realizar tu trabajo de manera efectiva?" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>¿Recibiste suficiente retroalimentación sobre tu desempeño? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿Recibiste suficiente retroalimentación sobre tu desempeño" value="Sí" required> Sí</label>
+                        <label class="radio-label"><input type="radio" name="¿Recibiste suficiente retroalimentación sobre tu desempeño" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>¿Estuviste satisfecho con el proceso de evaluación de desempeño de la empresa? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿Estuviste satisfecho con el proceso de evaluación de desempeño de la empresa?" value="Sí" required> Sí</label>
+                        <label class="radio-label"><input type="radio" name="¿Estuviste satisfecho con el proceso de evaluación de desempeño de la empresa?" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>¿Las cactividades de tu trabajo resultaron ser lo que tu esperabas? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿Las cactividades de tu trabajo resultaron ser lo que tu esperabas?" value="Sí" required> Sí</label>
+                        <label class="radio-label"><input type="radio" name="¿Las cactividades de tu trabajo resultaron ser lo que tu esperabas?" value="No"> No</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Calidad y Percepción</h2>
+                <div class="input-group">
+                    <label>¿cual fue la calidad de la supervisión que recibiste? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿cual fue la calidad de la supervisión que recibiste?" value="Buena" required> Buena</label>
+                        <label class="radio-label"><input type="radio" name="¿cual fue la calidad de la supervisión que recibiste?" value="Regular"> Regular</label>
+                        <label class="radio-label"><input type="radio" name="¿cual fue la calidad de la supervisión que recibiste?" value="Mala"> Mala</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>¿Cómo te sientes en general con esta empresa? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿Cómo te sientes en general con esta empresa?" value="Bien" required> Bien</label>
+                        <label class="radio-label"><input type="radio" name="¿Cómo te sientes en general con esta empresa?" value="Regular"> Regular</label>
+                        <label class="radio-label"><input type="radio" name="¿Cómo te sientes en general con esta empresa?" value="Mal"> Mal</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="gusto">¿Qué es lo que más te gustó de esta empresa? *</label>
+                    <textarea id="gusto" name="¿Qué es lo que más te gustó de esta empresa?" rows="3" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label>¿Considerarías trabajar de nuevo en esta empresa en el futuro? *</label>
+                    <div class="radio-inline">
+                        <label class="radio-label"><input type="radio" name="¿Considerarías trabajar de nuevo en esta empresa en el futuro?" value="Sí" required> Sí</label>
+                        <label class="radio-label"><input type="radio" name="¿Considerarías trabajar de nuevo en esta empresa en el futuro?" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="comentarios">Comentarios o sugerencias</label>
+                    <textarea id="comentarios" name="Comentarios o sugerencias" rows="3"></textarea>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Firma</h2>
+                <p class="help-text">Por favor firma en el recuadro abajo:</p>
+                <div class="signature-container">
+                    <canvas id="signaturePad" width="600" height="200"></canvas>
+                    <button type="button" id="clearSignature" class="btn-secondary">Limpiar Firma</button>
+                </div>
+                <input type="hidden" id="firmaInput" name="Firma">
+            </section>
+
+            <div class="form-actions">
+                <button type="submit" id="submitBtn" class="btn-primary">Enviar Entrevista</button>
+            </div>
+        </form>
+
+        <div id="statusMessage" class="status-message hidden">
+            <div class="spinner"></div>
+            <p>Enviando entrevista...</p>
+        </div>
+
+        <div id="successMessage" class="success-message hidden">
+            <div class="success-content">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h2>¡Gracias por tu honestidad!</h2>
+                <p>Tu feedback es fundamental para nosotros. Toda la información compartida será utilizada para mejorar nuestros procesos y el bienestar de la familia <strong>HSDA</strong>.</p>
+                <div class="divider"></div>
+                <p class="farewell-text">Te deseamos el mayor de los éxitos en tus nuevos proyectos. Siempre serás parte de nuestra historia.</p>
+                <div class="success-actions">
+                    <button onclick="location.reload()" class="btn-primary">Nueva Entrevista</button>
+                    <button onclick="exitApp()" class="btn-secondary">Salir de la Aplicación</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+
+        // Función para salir de la aplicación
+        window.exitApp = function() {
+            if (confirm("¿Estás seguro de que deseas salir?")) {
+                window.close();
+                // Fallback si window.close() es bloqueado por el navegador
+                setTimeout(() => {
+                    window.location.href = "about:blank";
+                }, 300);
+            }
+        };
+    </script>
+</body>
+</html>
